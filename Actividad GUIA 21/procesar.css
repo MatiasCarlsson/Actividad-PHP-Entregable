@@ -1,0 +1,275 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.card-container {
+  perspective: 1000px;
+}
+
+.card {
+  background: white;
+  padding: 50px;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mensaje de éxito */
+.success-message {
+  background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+  color: #155724;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 25px;
+  border: 2px solid #28a745;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(40, 167, 69, 0.2);
+  animation: bounceIn 0.6s ease;
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Avatar circular */
+.avatar {
+  width: 120px;
+  height: 120px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 50%;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3em;
+  font-weight: bold;
+  color: white;
+  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+  animation: rotateIn 0.7s ease;
+  border: 5px solid white;
+  outline: 3px solid #667eea;
+}
+
+@keyframes rotateIn {
+  from {
+    transform: rotate(-180deg) scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: rotate(0) scale(1);
+    opacity: 1;
+  }
+}
+
+/* Título del nombre */
+h1 {
+  color: #333;
+  margin-bottom: 10px;
+  font-size: 2em;
+  animation: slideInFromLeft 0.5s ease 0.2s both;
+}
+
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Sección de información */
+.info-section {
+  margin: 30px 0;
+  padding: 25px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 15px;
+  box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 15px 0;
+  font-size: 1.1em;
+  color: #555;
+  padding: 10px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.info-item:hover {
+  background: white;
+  transform: translateX(5px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.info-item .icon {
+  font-size: 1.5em;
+  margin-right: 10px;
+}
+
+.info-item strong {
+  color: #667eea;
+  margin-right: 8px;
+  font-weight: 700;
+}
+
+/* Botón de regreso */
+.btn-back {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 15px 40px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.btn-back:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+}
+
+.btn-back:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+/* Sección de debug */
+.debug-section {
+  margin-top: 30px;
+  padding: 20px;
+  background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+  border-radius: 10px;
+  text-align: left;
+  border: 2px solid #ffc107;
+}
+
+.debug-section h3 {
+  color: #856404;
+  margin-bottom: 10px;
+  font-size: 1.2em;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.debug-section pre {
+  background: white;
+  padding: 15px;
+  border-radius: 5px;
+  overflow-x: auto;
+  font-size: 0.9em;
+  font-family: "Courier New", monospace;
+  border: 1px solid #ffc107;
+  color: #333;
+  line-height: 1.5;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .card {
+    padding: 30px 20px;
+  }
+
+  h1 {
+    font-size: 1.5em;
+  }
+
+  .avatar {
+    width: 100px;
+    height: 100px;
+    font-size: 2.5em;
+  }
+
+  .info-item {
+    font-size: 1em;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .info-item .icon {
+    margin-right: 0;
+    margin-bottom: 5px;
+  }
+
+  .btn-back {
+    padding: 12px 30px;
+    font-size: 0.95em;
+  }
+
+  .debug-section {
+    padding: 15px;
+  }
+
+  .debug-section pre {
+    font-size: 0.8em;
+  }
+}
+
+/* Efectos adicionales */
+.info-item:nth-child(1) {
+  animation: slideInFromLeft 0.5s ease 0.4s both;
+}
+
+.info-item:nth-child(2) {
+  animation: slideInFromLeft 0.5s ease 0.5s both;
+}
+
+.btn-back {
+  animation: slideInFromLeft 0.5s ease 0.6s both;
+}
+
+.debug-section {
+  animation: fadeIn 0.5s ease 0.7s both;
+}
+
+/* Efecto de hover en toda la tarjeta */
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.35);
+  transition: all 0.3s ease;
+}
