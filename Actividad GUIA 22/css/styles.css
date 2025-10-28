@@ -1,0 +1,117 @@
+/* Importar archivos base */
+@import url("base.css");
+@import url("components.css");
+
+/* Estilos específicos para tablas de base de datos */
+.db-table-container {
+  background: var(--bg-card-hover);
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-lg);
+  margin: var(--spacing-lg) 0;
+  border: var(--border-card);
+}
+
+.db-table-container h3 {
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-md);
+  font-size: 1.5em;
+  text-align: center;
+}
+
+/* Estilos para el mensaje de conexión */
+.connection-status {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: var(--radius-md);
+  margin-bottom: var(--spacing-md);
+  font-weight: 600;
+  animation: fadeIn 0.5s ease;
+}
+
+.connection-status.success {
+  background: rgba(0, 255, 127, 0.2);
+  color: var(--color-success);
+  border: 2px solid var(--color-success);
+}
+
+.connection-status.error {
+  background: rgba(255, 68, 68, 0.2);
+  color: var(--color-error);
+  border: 2px solid var(--color-error);
+}
+
+/* Contenedor de acciones */
+.actions {
+  display: flex;
+  gap: var(--spacing-sm);
+  justify-content: center;
+  margin: var(--spacing-lg) 0;
+  flex-wrap: wrap;
+}
+
+/* Tabla responsive wrapper */
+.table-responsive {
+  overflow-x: auto;
+  border-radius: var(--radius-md);
+}
+
+/* Alternancia de filas */
+.data-table tbody tr:nth-child(even) {
+  background: rgba(0, 255, 127, 0.03);
+}
+
+/* Highlight de columnas */
+.data-table tbody td.highlight {
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+/* Footer de tabla */
+.table-footer {
+  text-align: center;
+  padding: var(--spacing-md);
+  color: var(--text-secondary);
+  font-size: 0.9em;
+  border-top: var(--border-card);
+  margin-top: var(--spacing-md);
+}
+
+/* Página de resultado vacío */
+.empty-state {
+  text-align: center;
+  padding: var(--spacing-xl);
+  color: var(--text-secondary);
+}
+
+.empty-state svg,
+.empty-state .icon {
+  font-size: 4em;
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-md);
+  opacity: 0.5;
+}
+
+.empty-state h3 {
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.empty-state p {
+  color: var(--text-muted);
+  margin-bottom: var(--spacing-md);
+}
+
+/* Responsive mejoras */
+@media (max-width: 768px) {
+  .db-table-container {
+    padding: var(--spacing-md);
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+
+  .actions .btn {
+    width: 100%;
+  }
+}
