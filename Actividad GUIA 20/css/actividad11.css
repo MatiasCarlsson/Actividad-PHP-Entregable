@@ -1,0 +1,78 @@
+/* Contenedor de checkboxes */
+.checkbox-group {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Cada opción de checkbox */
+.checkbox-option {
+  background: rgba(0, 255, 127, 0.05);
+  padding: 15px 20px;
+  margin: 10px 0;
+  border-radius: 10px;
+  border: 2px solid rgba(0, 255, 127, 0.2);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-option:hover {
+  background: rgba(0, 255, 127, 0.1);
+  border-color: rgba(0, 255, 127, 0.5);
+  transform: translateX(5px);
+}
+
+/* Checkbox input con estilo nativo mejorado */
+.checkbox-option input[type="checkbox"] {
+  margin-right: 12px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: var(--color-primary);
+}
+
+/* Label del checkbox */
+.checkbox-option label {
+  color: var(--text-secondary);
+  font-size: 1em;
+  cursor: pointer;
+  flex: 1;
+  margin: 0;
+}
+
+/* Opción seleccionada (checked) */
+.checkbox-option:has(input:checked) {
+  background: rgba(0, 255, 127, 0.2);
+  border-color: var(--color-primary);
+  box-shadow: 0 0 15px rgba(0, 255, 127, 0.2);
+}
+
+.result-item {
+  background: rgba(0, 255, 128, 0.212);
+  list-style: none;
+  padding: 12px 18px;
+  margin: 8px 0;
+  border-radius: 8px;
+  border-left: 3px solid var(--color-primary);
+  color: var(--text-secondary);
+  font-size: 0.95em;
+  transition: all var(--transition-normal);
+}
+
+.result-item:hover {
+  background: rgba(0, 255, 127, 0.15);
+  transform: translateX(3px);
+}
+.checkbox-option:has(input:checked) label {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .checkbox-option {
+    padding: 12px 15px;
+  }
+}
