@@ -1,20 +1,13 @@
 <?php
-function conexionDB()
-{
-    $conexion = mysqli_connect("localhost", "root", "2103", "halloween");
-    if (mysqli_connect_errno()) {
-        echo "" . mysqli_connect_error();
-        exit();
-    } else {
-        mysqli_set_charset($conexion, "utf8");
-    }
+// data/conexionDataBase.php
+$DB_HOST = '127.0.0.1';
+$DB_PORT = 3308; // cambia a 3306 si tu MySQL está en 3306
+$DB_USER = 'root';
+$DB_PASS = '';
+$DB_NAME = 'halloween';
 
-    return $conexion;
+$con = mysqli_connect($DB_HOST, $DB_USER, $DB_PASS, $DB_NAME, $DB_PORT);
+if (!$con) {
+    die('Error de conexión: ' . mysqli_connect_error());
 }
-
-function desconectarDB($conexion)
-{
-    mysqli_close($conexion);
-}
-
-?>
+mysqli_set_charset($con, 'utf8mb4');
